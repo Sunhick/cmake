@@ -12,6 +12,7 @@ CTestTestfile.cmake
 build/
 bin/
 install/
+lib/
 
 # temporary files
 *~
@@ -49,3 +50,6 @@ install/
 *.exe
 *.out
 *.app
+
+# ignore mac ds-store file
+.DS_Store
