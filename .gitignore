@@ -13,6 +13,9 @@ build/
 bin/
 install/
 
+# temporary files
+*~
+
 # CPP 
 # Prerequisites
 *.d
