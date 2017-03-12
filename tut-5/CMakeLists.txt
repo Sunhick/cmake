@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 2.8)
 
 # activae c++11 features
-SET(CMAKE_CXX_FLAGS "-std=c++0x")
+SET(CMAKE_CXX_FLAGS "-std=c++11")
 
 # catch all warnings and generate debug symbols
 add_definitions("-Wall" "-g")
@@ -35,7 +35,7 @@ message(STATUS "GTEST MAIN LIBS = " ${GTESTMAIN})
 add_executable(assignment8tests MovieTreeTests.cpp MovieTree.cpp MovieTree.hpp)
 target_link_libraries(
   assignment8tests
-  PUBLIC ${GTEST} ${GTESTMAIN})
+  PUBLIC ${GTEST} ${GTESTMAIN} pthread)
 
 # install executable
 install(

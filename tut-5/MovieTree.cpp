@@ -103,7 +103,15 @@ void MovieTree::deleteMovieNode(std::string title) {
     
     // It would be easier to copy value from minNode to node and delete minNode.
     // Rather than swapping the minNode with node and update a bunch of links!
+    
+    // Copy all values. not just title
     node->title = minNode->title;
+    node->ranking = minNode->ranking;
+    node->quantity = minNode->quantity;
+    node->year = minNode->year;
+    
+    // Dont' do memcpy because it will change the right and left child.
+    // memcpy(node, minNode, sizeof(MovieNode));
     
     // Set the minNode right's parent
     if (minNode->rightChild)

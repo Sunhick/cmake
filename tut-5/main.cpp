@@ -55,7 +55,7 @@ void PopulateCatalog(MovieTree* catalog, string filename) {
 }
 
 int main(int argc, const char * argv[]) {
-    
+
     string dmenu =  "======Main Menu======\n"
                     "1. Find a movie\n"
                     "2. Rent a movie\n"
@@ -74,8 +74,6 @@ int main(int argc, const char * argv[]) {
     
     string filename(argv[1]);
     PopulateCatalog(&catalog, filename);
-    
-    exit(0);
     
     do {
         cout << dmenu;
