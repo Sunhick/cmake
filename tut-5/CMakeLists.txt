@@ -3,17 +3,19 @@ cmake_minimum_required(VERSION 2.8)
 
 # activae c++11 features
 SET(CMAKE_CXX_FLAGS "-std=c++11")
+SET(CMAKE_EXE_LINKER_FLAGS)
+SET(TARGET assignment8)
 
 # catch all warnings and generate debug symbols
-add_definitions("-Wall" "-g")
+add_definitions("-Wall" "-O0")
 
-set(TARGET assignment8)
 # file(GLOB TARGET_SRC ${CMAKE_SOURCE_DIR}/*.cpp)
 
 project(${TARGET})
 
 # add_executable(${TARGET} ${TARGET_SRC})
-add_executable(${TARGET} MovieTree.cpp MovieTree.hpp main.cpp)
+add_executable(${TARGET} MovieTree.cpp MovieTree.h Assignment8.cpp)
+# target_link_libraries(${TARGET} gcov)
 
 include_directories(lib/include/)
 
@@ -32,7 +34,7 @@ find_library(
 message(STATUS "GTEST LIBS = " ${GTEST})
 message(STATUS "GTEST MAIN LIBS = " ${GTESTMAIN})
 
-add_executable(assignment8tests MovieTreeTests.cpp MovieTree.cpp MovieTree.hpp)
+add_executable(assignment8tests MovieTreeTests.cpp MovieTree.cpp MovieTree.h)
 target_link_libraries(
   assignment8tests
   PUBLIC ${GTEST} ${GTESTMAIN} pthread)
