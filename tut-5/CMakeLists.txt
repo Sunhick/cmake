@@ -6,8 +6,8 @@ SET(CMAKE_CXX_FLAGS "-std=c++11")
 SET(CMAKE_EXE_LINKER_FLAGS)
 SET(TARGET assignment8)
 
-# catch all warnings and generate debug symbols
-add_definitions("-Wall" "-O0")
+# catch all warnings, no optimization and generate debug symbols
+add_definitions("-Wall" "-O0 -g")
 
 # file(GLOB TARGET_SRC ${CMAKE_SOURCE_DIR}/*.cpp)
 
@@ -34,7 +34,7 @@ find_library(
 message(STATUS "GTEST LIBS = " ${GTEST})
 message(STATUS "GTEST MAIN LIBS = " ${GTESTMAIN})
 
-add_executable(assignment8tests MovieTreeTests.cpp MovieTree.cpp MovieTree.h)
+add_executable(assignment8tests MovieTreeTests.cpp MovieTree.cpp MovieTree.hpp)
 target_link_libraries(
   assignment8tests
   PUBLIC ${GTEST} ${GTESTMAIN} pthread)
