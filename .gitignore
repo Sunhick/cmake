@@ -13,6 +13,7 @@ build/
 bin/
 install/
 lib/
+Xcode/
 
 # temporary files
 *~
