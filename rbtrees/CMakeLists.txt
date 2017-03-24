@@ -16,7 +16,7 @@ add_definitions("-Wall" "-O0 -g")
 project(${TARGET})
 
 # add_executable(${TARGET} ${TARGET_SRC})
-add_executable(${TARGET} rbtree.cpp rbtree.hpp rbnode.cpp rbnode.hpp)
+add_executable(${TARGET} main.cpp rbtree.cpp rbtree.hpp rbnode.cpp rbnode.hpp)
 # target_link_libraries(${TARGET} gcov)
 
 include_directories(utest/lib/include/)
@@ -33,10 +33,7 @@ find_library(
   PATHS ${CMAKE_CURRENT_SOURCE_DIR}/utest/lib/
   NO_DEFAULT_PATH)
 
-message(STATUS "GTEST LIBS = " ${GTEST})
-message(STATUS "GTEST MAIN LIBS = " ${GTESTMAIN})
-
-add_executable(${TEST_TARGET} rbtree_tests.cpp ../rbtree.cpp ../rbtree.hpp ../rbnode.hpp ../rbnode.cpp)
+add_executable(${TEST_TARGET} ../utest/rbtree_tests.cpp ../rbtree.cpp ../rbtree.hpp ../rbnode.hpp ../rbnode.cpp)
 target_link_libraries(
   ${TEST_TARGET}
   PUBLIC ${GTEST} ${GTESTMAIN} pthread)
