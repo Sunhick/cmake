@@ -341,7 +341,24 @@ void rbtree::prune(int min, int max) {
 }
 
 void rbtree::balance(rbnode* node) {
-    throw new runtime_error("not implemented");
+    while (true) {
+        // loop invarient: node is red.
+        // we don't want two consecutive nodes (node and it's parent) to be red.
+        
+        // if node's parent is black. then we're done.
+        if (node->parent && node->parent->is_black_node()) {
+            break;
+        }
+        
+        // case 1: uncle is red.
+        // fix: recolor parent, grand-parent and uncle.
+        
+        // case 2: uncle is black (node is internal. falls within uncle and parent subtree).
+        // fix: rotate around parent. This rotation leads to case 3.
+        
+        // case 3: uncle is black (node is external. falls outside of uncle and parent's subtree)
+        // fix: rotate around grand-parent and swap colors of grand-parent & parent.
+    }
 }
 
 void rbtree::right_rotate(rbnode* y) {
