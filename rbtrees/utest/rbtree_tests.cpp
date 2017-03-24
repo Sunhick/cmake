@@ -8,7 +8,8 @@
 
 #include "gtest/gtest.h"
 
-// Nasty hack to test MovieTree
+// redefine class, private & protected to get access to
+// private and protected members of rbtree & rbnode.
 #define class struct
 #define private public
 #define protected public
@@ -61,7 +62,6 @@ TEST_F(rbtree_tests, test_rbtree_invalid) {
 }
 
 TEST_F(rbtree_tests, test_rbtree_valid_1) {
-    // sample usage of rb trees
     // build a red black tree.
     auto root = new rbnode(45, rbcolor::black);
     
@@ -79,18 +79,29 @@ TEST_F(rbtree_tests, test_rbtree_valid_1) {
 }
 
 TEST_F(rbtree_tests, test_rbtree_valid_2) {
-    auto root2 = new rbnode(10, rbcolor::black);
-    auto n7 = new rbnode(7, rbcolor::black, root2);
-    auto n19 = new rbnode(19, rbcolor::red, root2);
+    auto root = new rbnode(10, rbcolor::black);
+    auto n7 = new rbnode(7, rbcolor::black, root);
+    auto n19 = new rbnode(19, rbcolor::red, root);
     auto n13 = new rbnode(13, rbcolor::black, n19);
     auto n23 = new rbnode(23, rbcolor::black, n19);
     
-    root2->left = n7;
-    root2->right = n19;
+    root->left = n7;
+    root->right = n19;
     n19->left = n13;
     n19->right = n23;
     
-    rbt->root = root2;
-    
+    rbt->root = root;
     EXPECT_TRUE(rbt->is_valid_rbtree());
+}
+
+TEST_F(rbtree_tests, test_rbtree_insert) {
+    
+}
+
+TEST_F(rbtree_tests, test_rbtree_remove) {
+    
+}
+
+TEST_F(rbtree_tests, test_rbtree_remove_all) {
+    
 }
