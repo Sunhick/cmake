@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 2.8)
 
 # activae c++11 features
-SET(CMAKE_CXX_FLAGS "-std=c++11")
+SET(CMAKE_CXX_FLAGS "-std=c++11”)
 SET(CMAKE_EXE_LINKER_FLAGS)
 
 SET(TARGET rbtree)
