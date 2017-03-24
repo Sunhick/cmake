@@ -39,9 +39,58 @@ private:
 
 class rbtree_tests : public ::testing::Test {
 public:
-  
+    // red black trees
+    rbtree* rbt;
+    
+    rbtree_tests() {
+        rbt = new rbtree();
+    }
+    
+    ~rbtree_tests() {
+        delete rbt;
+    }
 };
 
 TEST_F(rbtree_tests, test_empty) {
+    EXPECT_TRUE(rbt->root == nullptr) << "root should be null";
+}
 
+TEST_F(rbtree_tests, test_rbtree_invalid) {
+    rbt->root = new rbnode(56, rbcolor::red);
+    EXPECT_FALSE(rbt->is_valid_rbtree()) << "tree with red root is invalid";
+}
+
+TEST_F(rbtree_tests, test_rbtree_valid_1) {
+    // sample usage of rb trees
+    // build a red black tree.
+    auto root = new rbnode(45, rbcolor::black);
+    
+    auto r1 = new rbnode(25);
+    r1->parent = root;
+    
+    auto r2 = new rbnode(60);
+    r2->parent = root;
+    
+    root->left = r1;
+    root->right = r2;
+    
+    rbt->root = root;
+    EXPECT_TRUE(rbt->is_valid_rbtree());
+}
+
+TEST_F(rbtree_tests, test_rbtree_valid_2) {
+    auto root2 = new rbnode(10, rbcolor::black);
+    auto n7 = new rbnode(7, rbcolor::black, root2);
+    auto n19 = new rbnode(19, rbcolor::red, root2);
+    auto n13 = new rbnode(13, rbcolor::black, n19);
+    auto n23 = new rbnode(23, rbcolor::black, n19);
+    
+    root2->left = n7;
+    root2->right = n19;
+    n19->left = n13;
+    n19->right = n23;
+    
+    rbt->root = root2;
+    
+    EXPECT_TRUE(rbt->is_valid_rbtree());
 }
