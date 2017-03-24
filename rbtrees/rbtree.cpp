@@ -428,6 +428,22 @@ void rbtree::left_rotate(rbnode* x) {
     x->parent = y;
 }
 
+int rbtree::depth(rbnode* node) {
+    if (!node) {
+        // no node. depth is zero.
+        return 0;
+    }
+    
+    auto left_depth = depth(node->left);
+    auto right_depth = depth(node->right);
+    
+    return 1 + max(left_depth, right_depth);
+}
+
+int rbtree::depth() {
+    return depth(root);
+}
+
 void rbtree::remove(int key) {
     // TODO: after removing the node, rebalance the tree.
     throw new runtime_error("not implemented");

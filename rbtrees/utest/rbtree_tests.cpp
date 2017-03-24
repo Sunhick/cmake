@@ -56,9 +56,27 @@ TEST_F(rbtree_tests, test_empty) {
     EXPECT_TRUE(rbt->root == nullptr) << "root should be null";
 }
 
-TEST_F(rbtree_tests, test_rbtree_invalid) {
+TEST_F(rbtree_tests, test_rbtree_invalid_1) {
     rbt->root = new rbnode(56, rbcolor::red);
     EXPECT_FALSE(rbt->is_valid_rbtree()) << "tree with red root is invalid";
+}
+
+TEST_F(rbtree_tests, test_rbtree_invalid_2) {
+    auto root = new rbnode(7, rbcolor::black);
+    auto n3 = new rbnode(3, rbcolor::red, root);
+    auto n18 = new rbnode(18, rbcolor::black, root);
+    auto n1 = new rbnode(1, rbcolor::black, n3);
+    auto n45 = new rbnode(45, rbcolor::black, n18);
+    auto n2 = new rbnode(2, rbcolor::black, n1);
+    
+    root->left = n3;
+    root->right = n18;
+    n18->right = n45;
+    n3->left = n1;
+    n1->right = n2;
+    
+    rbt->root = root;
+    EXPECT_FALSE(rbt->is_valid_rbtree());
 }
 
 TEST_F(rbtree_tests, test_rbtree_valid_1) {
