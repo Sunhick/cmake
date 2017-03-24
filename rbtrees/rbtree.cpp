@@ -340,26 +340,30 @@ void rbtree::prune(int min, int max) {
     throw new runtime_error("not implemented");
 }
 
-void rbtree::balance(rbnode* node) {
+void rbtree::balance(rbnode* x) {
     while (true) {
         // loop invarient: node is red.
         // we don't want two consecutive nodes (node and it's parent) to be red.
         
+        /*
+            notation used in rb tree representation in comments.
+                g  = black grand parent
+                p  = black parent
+                u  = black uncle
+         
+                X  = newly inserted red node
+                G  = red grand parent
+                P  = red parent
+                U  = red uncle
+         */
+        auto p = x->parent;
+        auto g = p->parent;
+        auto u = g->left == p ? g->right : g->left;
+        
         // if node's parent is black. then we're done.
-        if (node->parent && node->parent->is_black_node()) {
+        if (p && p->is_black_node()) {
             break;
         }
-        /*
-         notation used in rb tree representation in comments.
-            g  = black grand parent
-            p  = black parent
-            u  = black uncle
-            
-            X  = newly inserted red node
-            G  = red grand parent
-            P  = red parent
-            U  = red uncle
-         */
         
         /* case 1: uncle is red.
             fix: recolor parent, grand-parent and uncle.
@@ -511,6 +515,20 @@ int rbtree::depth(rbnode* node) {
     auto right_depth = depth(node->right);
     
     return 1 + max(left_depth, right_depth);
+}
+
+void rbtree::inorder() {
+    inorder_traversal(root);
+}
+
+void rbtree::inorder_traversal(rbnode* node) {
+    if (!node) {
+        return;
+    }
+    
+    inorder_traversal(node->left);
+    cout << node->key << endl;
+    inorder_traversal(node->right);
 }
 
 int rbtree::depth() {

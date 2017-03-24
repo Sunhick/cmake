@@ -123,3 +123,74 @@ TEST_F(rbtree_tests, test_rbtree_remove) {
 TEST_F(rbtree_tests, test_rbtree_remove_all) {
     
 }
+
+TEST_F(rbtree_tests, test_left_rotate) {
+    /*
+          x                                          y
+         / \          left rotate around x          / \
+        a   y       ------------------------>      x   c
+           / \                                    / \
+          b   c                                  a   b
+     */
+    
+    auto x = new rbnode(50, rbcolor::black);
+    auto y = new rbnode(60, rbcolor::red, x);
+    auto a = new rbnode(25, rbcolor::black, x);
+    auto b = new rbnode(55, rbcolor::black, y);
+    auto c = new rbnode(70, rbcolor::black, y);
+    
+    x->left = a;
+    x->right = y;
+    y->right = c;
+    y->left  = b;
+    
+    rbt->root = x;
+    rbt->left_rotate(x);
+    
+    stringstream buffer; {
+        cout_redirect activate(buffer.rdbuf());
+        rbt->inorder();
+    }
+    
+    string expected = "25\n50\n55\n60\n70\n";
+    string got = buffer.str();
+    
+    EXPECT_TRUE(expected == got) << "left rotation is incorrect.";
+}
+
+TEST_F(rbtree_tests, test_right_rotate) {
+    /*
+             y                                        x
+            / \        right rotate around y         / \
+           x   c     ----------------------->       a   y
+          / \                                          / \
+         a   b                                        b   c
+     
+     */
+    
+    auto y = new rbnode(50, rbcolor::black);
+    auto x = new rbnode(25, rbcolor::red, y);
+    auto a = new rbnode(10, rbcolor::black, x);
+    auto b = new rbnode(30, rbcolor::black, x);
+    auto c = new rbnode(60, rbcolor::black);
+    
+    x->left = a;
+    x->right = b;
+    y->right = c;
+    y->left  = x;
+    
+    rbt->root = y;
+    rbt->right_rotate(y);
+    
+    stringstream buffer; {
+        cout_redirect activate(buffer.rdbuf());
+        rbt->inorder();
+    }
+    
+    string expected = "10\n25\n30\n50\n60\n";
+    string got = buffer.str();
+    
+    EXPECT_TRUE(expected == got) << "right rotation is incorrect.";
+}
+
+
