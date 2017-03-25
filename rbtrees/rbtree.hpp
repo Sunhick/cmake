@@ -26,6 +26,8 @@ private:
     int depth(rbnode* node);
     
     void inorder_traversal(rbnode* node);
+    void preorder_traversal(rbnode* node);
+    void postorder_traversal(rbnode* node);
     
 public:
     rbtree();
@@ -47,7 +49,10 @@ public:
     
     void bfs();
     void dfs();
+    
     void inorder();
+    void preorder();
+    void postorder();
 };
 
 #endif /* rbtree_hpp */

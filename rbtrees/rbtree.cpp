@@ -358,6 +358,12 @@ void rbtree::balance(rbnode* x) {
                 G  = red grand parent
                 P  = red parent
                 U  = red uncle
+         
+            notation used in code:
+                g = grand parent
+                p = parent
+                u = uncle
+                x = node newly inserted.
          */
         auto p = x->parent;
 
@@ -392,7 +398,9 @@ void rbtree::balance(rbnode* x) {
                  / \   / \                                  / \   / \
                           X                                          X
          */
-        if (!u_is_black) {
+        auto u_is_red = !u_is_black;
+        
+        if (u_is_red) {
             g->color = rbcolor::red;
             p->color = rbcolor::black;
             
@@ -580,6 +588,36 @@ int rbtree::depth(rbnode* node) {
 
 void rbtree::inorder() {
     inorder_traversal(root);
+}
+
+void rbtree::preorder() {
+    preorder_traversal(root);
+}
+
+void rbtree::postorder() {
+    postorder_traversal(root);
+}
+
+void rbtree::preorder_traversal(rbnode *node) {
+    if (!node) {
+        return;
+    }
+    
+    preorder_traversal(node->left);
+    preorder_traversal(node->right);
+    auto color = node->is_black_node() ? "(black)" : "(red)";
+    cout << node->key << color << endl;
+}
+
+void rbtree::postorder_traversal(rbnode *node) {
+    if (!node) {
+        return;
+    }
+    
+    auto color = node->is_black_node() ? "(black)" : "(red)";
+    cout << node->key << color << endl;
+    postorder_traversal(node->left);
+    postorder_traversal(node->right);
 }
 
 void rbtree::inorder_traversal(rbnode* node) {

@@ -1,6 +1,0 @@
-/Users/Sunny/prv/github/cmake/rbtrees/Xcode/CMakeFiles/rbtree_tests.dir
-/Users/Sunny/prv/github/cmake/rbtrees/Xcode/CMakeFiles/install.dir
-/Users/Sunny/prv/github/cmake/rbtrees/Xcode/CMakeFiles/rbtree_main.dir
-/Users/Sunny/prv/github/cmake/rbtrees/Xcode/CMakeFiles/rbtree.dir
-/Users/Sunny/prv/github/cmake/rbtrees/Xcode/CMakeFiles/ALL_BUILD.dir
-/Users/Sunny/prv/github/cmake/rbtrees/Xcode/CMakeFiles/ZERO_CHECK.dir
