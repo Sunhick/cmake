@@ -156,6 +156,7 @@ TEST_F(rbtree_tests, test_left_rotate) {
     string got = buffer.str();
     
     EXPECT_TRUE(expected == got) << "left rotation is incorrect.";
+    EXPECT_TRUE(rbt->depth() == 3) << "left rotation is of incorrect depth";
 }
 
 TEST_F(rbtree_tests, test_right_rotate) {
@@ -191,6 +192,7 @@ TEST_F(rbtree_tests, test_right_rotate) {
     string got = buffer.str();
     
     EXPECT_TRUE(expected == got) << "right rotation is incorrect.";
+    EXPECT_TRUE(rbt->depth() == 3) << "right rotation is of incorrect depth";
 }
 
 

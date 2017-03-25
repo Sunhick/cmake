@@ -44,10 +44,11 @@ bool rbtree::violates(bool constraint) {
 }
 
 void rbtree::insert(int key) {
-    auto node = new rbnode(key, rbcolor::black);
+    auto node = new rbnode(key, rbcolor::red);
     if (!root) {
         // empty tree. first node to add.
         // create a black node and add it to the rbtree.
+        node->color = rbcolor::black;
         root = node;
         return;
     }
@@ -295,7 +296,8 @@ void rbtree::bfs() {
         auto node = queue.front();
         queue.pop_front();
         
-        cout << node->key << endl;
+        string color = node->is_black_node() ? "(black)" : "(red)";
+        cout << node->key << color << endl;
         
         if (node->left) {
             queue.push_back(node->left);
@@ -322,7 +324,8 @@ void rbtree::dfs() {
         auto node = stk.top();
         stk.pop();
         
-        cout << node->key << endl;
+        string color = node->is_black_node() ? "(black)" : "(red)";
+        cout << node->key << color << endl;
         
         if (node->right) {
             auto right = node->right;
@@ -357,13 +360,15 @@ void rbtree::balance(rbnode* x) {
                 U  = red uncle
          */
         auto p = x->parent;
-        auto g = p->parent;
-        auto u = g->left == p ? g->right : g->left;
-        
+
         // if node's parent is black. then we're done.
-        if (p && p->is_black_node()) {
+        if (p->is_black_node()) {
             break;
         }
+        
+        auto g = p->parent;
+        auto is_p_left_of_g = (g->left == p);
+        auto u = is_p_left_of_g ? g->right : g->left;
         
         /* case 1: uncle is red.
             fix: recolor parent, grand-parent and uncle.
@@ -376,6 +381,18 @@ void rbtree::balance(rbnode* x) {
                  / \   / \                                  / \   / \
                 X                                          X
          */
+        if (!u || u->is_red_node()) {
+            g->color = rbcolor::red;
+            p->color = rbcolor::black;
+            
+            if (u) {
+                u->color = rbcolor::black;
+            }
+            
+            // continue recoloring up the tree until rbtree properties are fixed.
+            x = g;
+            continue;
+        }
         
         /* case 2: uncle is black (node is internal. falls within uncle and parent subtree).
             fix: rotate around parent. This rotation leads to case 3.
@@ -396,6 +413,20 @@ void rbtree::balance(rbnode* x) {
               / \   / \                                       / \   / \
                    X                                                   P
          */
+        auto is_x_right_of_p = (p->right == x);
+        auto is_internal = (is_p_left_of_g && is_x_right_of_p) || (!is_p_left_of_g && !is_x_right_of_p);
+        
+        if (u->is_black_node() && is_internal) {
+            
+            if (is_p_left_of_g && is_x_right_of_p)
+                left_rotate(p);
+            else
+                right_rotate(p);
+            
+            // after left / right rotate, P takes the place of X
+            x = p;
+            continue;
+        }
         
         /* case 3: uncle is black (node is external. falls outside of uncle and parent's subtree)
             fix: rotate around grand-parent and swap colors of grand-parent & parent.
@@ -418,7 +449,26 @@ void rbtree::balance(rbnode* x) {
                   a   X                                    u   a
                                                           / \
          */
+        // I'm hard coding to true, because if none of the above cases fails. It
+        // has to be a case-3 and has to be external node.
+        auto is_x_left_of_p = (p->left == x);
+        auto is_external = true;
+        
+        if (u->is_black_node() && is_external) {
+            if (is_p_left_of_g && is_x_left_of_p)
+                right_rotate(g);
+            else
+                left_rotate(g);
+            
+            // swap the color of (parent, grand-parent) after rotation.
+            g->color = rbcolor::red;
+            p->color = rbcolor::black;
+        }
     }
+    
+    // in case if root's color is changed by case-1.
+    // reset it's color to black.
+    root->color = rbcolor::black;
 }
 
 void rbtree::right_rotate(rbnode* y) {
@@ -527,7 +577,8 @@ void rbtree::inorder_traversal(rbnode* node) {
     }
     
     inorder_traversal(node->left);
-    cout << node->key << endl;
+    auto color = node->is_black_node() ? "(black)" : "(red)";
+    cout << node->key << color << endl;
     inorder_traversal(node->right);
 }
 
