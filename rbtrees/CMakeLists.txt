@@ -2,14 +2,17 @@
 cmake_minimum_required(VERSION 2.8)
 
 # mac os needs c++11 and linux needs gnu++11
-if (APPLE OR WIN32)
-  # activae c++11 features
-  SET(CMAKE_CXX_FLAGS "-std=c++11")
-elseif (UNIX)
-  SET(CMAKE_CXX_FLAGS "-std=gnu++11")
-endif()
+# if (APPLE OR WIN32)
+#   # activae c++11 features
+#   SET(CMAKE_CXX_FLAGS "-std=c++11")
+# elseif (UNIX)
+#   SET(CMAKE_CXX_FLAGS "-std=gnu++11")
+# endif()
 
-SET(CMAKE_EXE_LINKER_FLAGS)
+# SET(CMAKE_EXE_LINKER_FLAGS)
+SET(CMAKE_CXX_STANDARD 11) # C++11...
+SET(CMAKE_CXX_STANDARD_REQUIRED ON) #...is required...
+# list(APPEND CMAKE_CXX_FLAGS "-std=c++11" ${CMAKE_CXX_FLAGS})
 
 SET(TARGET rbtree_main)
 SET(TEST_TARGET rbtree_tests)
