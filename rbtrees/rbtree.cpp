@@ -381,7 +381,7 @@ void rbtree::balance(rbnode* x) {
                  / \   / \                                  / \   / \
                 X                                          X
          */
-        if (!u || u->is_red_node()) {
+        if (u && u->is_red_node()) {
             g->color = rbcolor::red;
             p->color = rbcolor::black;
             
