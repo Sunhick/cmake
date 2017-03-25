@@ -383,6 +383,14 @@ void rbtree::balance(rbnode* x) {
                   P     U                                    p     u
                  / \   / \                                  / \   / \
                 X                                          X
+
+                  ...                                        ...
+                    \                                          \
+                     g             recolor (g, p, u)            G
+                   /   \          ------------------->        /   \
+                  U     P                                    u     p
+                 / \   / \                                  / \   / \
+                          X                                          X
          */
         if (!u_is_black) {
             g->color = rbcolor::red;
