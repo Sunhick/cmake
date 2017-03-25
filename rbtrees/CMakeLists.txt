@@ -25,7 +25,7 @@ include_directories(utest/libs/include/)
 
 if(APPLE)
   SET(OS_TYPE macos)
-elseif(LINUX) 
+elseif(UNIX) 
   SET(OS_TYPE linux)
 else()
   SET(OS_TYPE win)
