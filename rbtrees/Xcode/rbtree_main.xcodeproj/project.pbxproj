@@ -1,0 +1,1473 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		97AABAB7A7FA446A9C162243 /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 45433716DBB14135823E9B90 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				D6518C50006D426C8E023476 /* CMake Rules */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+		DDD6AE2DB9454FC8A71C6B20 /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 2212804796DA4C7DAF79F22A /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				47599ED981154A7880FEECEB /* CMake Rules */,
+			);
+			dependencies = (
+				6DE0FF7B34CD403C85851732 /* PBXTargetDependency */,
+				26DCE7AD3AA24468A88FDAEA /* PBXTargetDependency */,
+				A327F28B066B4802B10A01CC /* PBXTargetDependency */,
+				B4456C8ED17F4F988EDDDAD8 /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+		F29A8C1F4E2B41E19F557DE8 /* install */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 1C645DC254E04CCDB97F47E3 /* Build configuration list for PBXAggregateTarget "install" */;
+			buildPhases = (
+				0115B2D598BC4E97929C3FDC /* CMake PostBuild Rules */,
+			);
+			dependencies = (
+				C24680D33E964F5998EDC5F6 /* PBXTargetDependency */,
+			);
+			name = install;
+			productName = install;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		29FDAA6181E44ADEAF9278A9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94B89263376847F4B040E651 /* main.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		52080AF1A4404CE28B7FD42B /* rbtree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 272C4167F7064CAC9B432E0E /* rbtree.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		C2083E340C794235AE10E7D4 /* rbtree_tests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED72AD2E27DA4E548B63DB8D /* rbtree_tests.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		D6DD376FD10D4CF4B49816C2 /* rbnode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7D1BA20954B47A0BAB8A731 /* rbnode.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		092074056EA64F22B33B4299 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D14F33A85E294C6F8FADF5CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 97AABAB7A7FA446A9C162243;
+			remoteInfo = ZERO_CHECK;
+		};
+		1BF5EF6C60C84D538FF96970 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D14F33A85E294C6F8FADF5CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D04F84697CD1437EB94E6227;
+			remoteInfo = rbtree;
+		};
+		3541C6C2159E40119854EAB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D14F33A85E294C6F8FADF5CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F66F9729B5B492CA7FB240C;
+			remoteInfo = rbtree_tests;
+		};
+		3A57289C1EB84A0092951815 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D14F33A85E294C6F8FADF5CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 97AABAB7A7FA446A9C162243;
+			remoteInfo = ZERO_CHECK;
+		};
+		6F5E6561908447DC95DCF36E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D14F33A85E294C6F8FADF5CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D04F84697CD1437EB94E6227;
+			remoteInfo = rbtree;
+		};
+		7C9DB28B8ECB4E4CBED488DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D14F33A85E294C6F8FADF5CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 97AABAB7A7FA446A9C162243;
+			remoteInfo = ZERO_CHECK;
+		};
+		8B258D5AE81C4AA88C7E44EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D14F33A85E294C6F8FADF5CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D04F84697CD1437EB94E6227;
+			remoteInfo = rbtree;
+		};
+		98471BB75A0C4CEC94AFEA35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D14F33A85E294C6F8FADF5CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 06D4EA608B2344D5AEA16450;
+			remoteInfo = rbtree_main;
+		};
+		C6F34CF6C7AA406D924B07AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D14F33A85E294C6F8FADF5CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DDD6AE2DB9454FC8A71C6B20;
+			remoteInfo = ALL_BUILD;
+		};
+		EEE8283CDCC04E86AE2E1B10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D14F33A85E294C6F8FADF5CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 97AABAB7A7FA446A9C162243;
+			remoteInfo = ZERO_CHECK;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0C359B4FBFB9439CB65A026B /* rbnode.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = rbnode.hpp; sourceTree = SOURCE_ROOT; };
+		1D9C8FB723E846E09913904D /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		272C4167F7064CAC9B432E0E /* rbtree.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = rbtree.cpp; sourceTree = SOURCE_ROOT; };
+		2E20BD50E2A54C09B7F6E061 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		9135B110CD76496E8810B660 /* rbtree_main */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = rbtree_main; sourceTree = BUILT_PRODUCTS_DIR; };
+		94B89263376847F4B040E651 /* main.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = main.cpp; sourceTree = SOURCE_ROOT; };
+		967585E60631479E970CFA57 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		A7D1BA20954B47A0BAB8A731 /* rbnode.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = rbnode.cpp; sourceTree = SOURCE_ROOT; };
+		ACFE542B29AD44D1B4E50EDD /* rbtree_tests */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = rbtree_tests; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADD40E0554954A879A923E82 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		C7317CFBD4404D64AFCCB442 /* rbtree.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = rbtree.hpp; sourceTree = SOURCE_ROOT; };
+		DEAFEC1337C0417985BFFDC5 /* librbtree.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = librbtree.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED72AD2E27DA4E548B63DB8D /* rbtree_tests.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = rbtree_tests.cpp; path = utest/rbtree_tests.cpp; sourceTree = SOURCE_ROOT; };
+		EEF0E95450DE4588867D15E4 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		333F435718834CFB88958EFF /* rbtree_tests */ = {
+			isa = PBXGroup;
+			children = (
+				6FA2F4490B1E403AB38D5BED /* Source Files */,
+				2E20BD50E2A54C09B7F6E061 /* CMakeLists.txt */,
+			);
+			name = rbtree_tests;
+			sourceTree = "<group>";
+		};
+		44C46F7FCBBB44A186247798 = {
+			isa = PBXGroup;
+			children = (
+				D4B17F99FEC34718A2023C32 /* Sources */,
+				7D717447DEF24642AF9D6CFC /* Resources */,
+				637E93E6F31B48A78AD86EC9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5534C73B751C4AAA860E836A /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				A7D1BA20954B47A0BAB8A731 /* rbnode.cpp */,
+				272C4167F7064CAC9B432E0E /* rbtree.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		59C54A170DD544B68768239B /* rbtree_main */ = {
+			isa = PBXGroup;
+			children = (
+				C96D112505824C4F8E1165EB /* Source Files */,
+				967585E60631479E970CFA57 /* CMakeLists.txt */,
+			);
+			name = rbtree_main;
+			sourceTree = "<group>";
+		};
+		637E93E6F31B48A78AD86EC9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DEAFEC1337C0417985BFFDC5 /* librbtree.a */,
+				9135B110CD76496E8810B660 /* rbtree_main */,
+				ACFE542B29AD44D1B4E50EDD /* rbtree_tests */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6871E6B40AF14870BF9E1C01 /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				0C359B4FBFB9439CB65A026B /* rbnode.hpp */,
+				C7317CFBD4404D64AFCCB442 /* rbtree.hpp */,
+			);
+			name = "Header Files";
+			sourceTree = "<group>";
+		};
+		6FA2F4490B1E403AB38D5BED /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				ED72AD2E27DA4E548B63DB8D /* rbtree_tests.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		7D717447DEF24642AF9D6CFC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		83F7310D99F2485DAD8F3306 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		8ABDF576DBB0434D9D0F1ADE /* rbtree */ = {
+			isa = PBXGroup;
+			children = (
+				5534C73B751C4AAA860E836A /* Source Files */,
+				6871E6B40AF14870BF9E1C01 /* Header Files */,
+				1D9C8FB723E846E09913904D /* CMakeLists.txt */,
+			);
+			name = rbtree;
+			sourceTree = "<group>";
+		};
+		8F37A46726F74BA0AAD1EE86 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		BAEFD2E4B5EA4DADA1A75D0A /* ZERO_CHECK */ = {
+			isa = PBXGroup;
+			children = (
+				83F7310D99F2485DAD8F3306 /* CMake Rules */,
+				EEF0E95450DE4588867D15E4 /* CMakeLists.txt */,
+			);
+			name = ZERO_CHECK;
+			sourceTree = "<group>";
+		};
+		C34C5884908B496D92099023 /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				8F37A46726F74BA0AAD1EE86 /* CMake Rules */,
+				ADD40E0554954A879A923E82 /* CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		C96D112505824C4F8E1165EB /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				94B89263376847F4B040E651 /* main.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		D4B17F99FEC34718A2023C32 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				333F435718834CFB88958EFF /* rbtree_tests */,
+				59C54A170DD544B68768239B /* rbtree_main */,
+				8ABDF576DBB0434D9D0F1ADE /* rbtree */,
+				C34C5884908B496D92099023 /* ALL_BUILD */,
+				BAEFD2E4B5EA4DADA1A75D0A /* ZERO_CHECK */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		06D4EA608B2344D5AEA16450 /* rbtree_main */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95A57484146E430CBCF08647 /* Build configuration list for PBXNativeTarget "rbtree_main" */;
+			buildPhases = (
+				D1D5387127B14AC2B2870E68 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1FA2E390D4D44C75BA1711F8 /* PBXTargetDependency */,
+				7F4A357DD4B14A1AB3998B4C /* PBXTargetDependency */,
+			);
+			name = rbtree_main;
+			productName = rbtree_main;
+			productReference = 9135B110CD76496E8810B660 /* rbtree_main */;
+			productType = "com.apple.product-type.tool";
+		};
+		4F66F9729B5B492CA7FB240C /* rbtree_tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6AC7D2A362C34A65BA9D6A60 /* Build configuration list for PBXNativeTarget "rbtree_tests" */;
+			buildPhases = (
+				892FD3E61AE44D4CB62923CF /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7B1C4B428FF24771898AD881 /* PBXTargetDependency */,
+				9621A94DC89B40648BEE39F3 /* PBXTargetDependency */,
+			);
+			name = rbtree_tests;
+			productName = rbtree_tests;
+			productReference = ACFE542B29AD44D1B4E50EDD /* rbtree_tests */;
+			productType = "com.apple.product-type.tool";
+		};
+		D04F84697CD1437EB94E6227 /* rbtree */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5EA2C789600B4136A0CE7C2A /* Build configuration list for PBXNativeTarget "rbtree" */;
+			buildPhases = (
+				B5AB7A2AF7DA4ADF942DC6B2 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3C21E8F66C814577BA69D942 /* PBXTargetDependency */,
+			);
+			name = rbtree;
+			productName = rbtree;
+			productReference = DEAFEC1337C0417985BFFDC5 /* librbtree.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D14F33A85E294C6F8FADF5CB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 0820;
+			};
+			buildConfigurationList = D4F93D17C70D4DEB9C7D0E43 /* Build configuration list for PBXProject "rbtree_main" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 44C46F7FCBBB44A186247798;
+			projectDirPath = ../;
+			projectRoot = "";
+			targets = (
+				DDD6AE2DB9454FC8A71C6B20 /* ALL_BUILD */,
+				97AABAB7A7FA446A9C162243 /* ZERO_CHECK */,
+				F29A8C1F4E2B41E19F557DE8 /* install */,
+				D04F84697CD1437EB94E6227 /* rbtree */,
+				06D4EA608B2344D5AEA16450 /* rbtree_main */,
+				4F66F9729B5B492CA7FB240C /* rbtree_tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0115B2D598BC4E97929C3FDC /* CMake PostBuild Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake PostBuild Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/Sunny/prv/github/cmake/rbtrees/Xcode -f /Users/Sunny/prv/github/cmake/rbtrees/Xcode/CMakeScripts/install_postBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		47599ED981154A7880FEECEB /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/Sunny/prv/github/cmake/rbtrees/Xcode -f /Users/Sunny/prv/github/cmake/rbtrees/Xcode/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		D6518C50006D426C8E023476 /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/Sunny/prv/github/cmake/rbtrees/Xcode -f /Users/Sunny/prv/github/cmake/rbtrees/Xcode/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		892FD3E61AE44D4CB62923CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2083E340C794235AE10E7D4 /* rbtree_tests.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5AB7A2AF7DA4ADF942DC6B2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6DD376FD10D4CF4B49816C2 /* rbnode.cpp in Sources */,
+				52080AF1A4404CE28B7FD42B /* rbtree.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D1D5387127B14AC2B2870E68 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29FDAA6181E44ADEAF9278A9 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1FA2E390D4D44C75BA1711F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D04F84697CD1437EB94E6227 /* rbtree */;
+			targetProxy = 6F5E6561908447DC95DCF36E /* PBXContainerItemProxy */;
+		};
+		26DCE7AD3AA24468A88FDAEA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4F66F9729B5B492CA7FB240C /* rbtree_tests */;
+			targetProxy = 3541C6C2159E40119854EAB4 /* PBXContainerItemProxy */;
+		};
+		3C21E8F66C814577BA69D942 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 97AABAB7A7FA446A9C162243 /* ZERO_CHECK */;
+			targetProxy = 092074056EA64F22B33B4299 /* PBXContainerItemProxy */;
+		};
+		6DE0FF7B34CD403C85851732 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D04F84697CD1437EB94E6227 /* rbtree */;
+			targetProxy = 8B258D5AE81C4AA88C7E44EA /* PBXContainerItemProxy */;
+		};
+		7B1C4B428FF24771898AD881 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D04F84697CD1437EB94E6227 /* rbtree */;
+			targetProxy = 1BF5EF6C60C84D538FF96970 /* PBXContainerItemProxy */;
+		};
+		7F4A357DD4B14A1AB3998B4C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 97AABAB7A7FA446A9C162243 /* ZERO_CHECK */;
+			targetProxy = EEE8283CDCC04E86AE2E1B10 /* PBXContainerItemProxy */;
+		};
+		9621A94DC89B40648BEE39F3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 97AABAB7A7FA446A9C162243 /* ZERO_CHECK */;
+			targetProxy = 7C9DB28B8ECB4E4CBED488DA /* PBXContainerItemProxy */;
+		};
+		A327F28B066B4802B10A01CC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 06D4EA608B2344D5AEA16450 /* rbtree_main */;
+			targetProxy = 98471BB75A0C4CEC94AFEA35 /* PBXContainerItemProxy */;
+		};
+		B4456C8ED17F4F988EDDDAD8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 97AABAB7A7FA446A9C162243 /* ZERO_CHECK */;
+			targetProxy = 3A57289C1EB84A0092951815 /* PBXContainerItemProxy */;
+		};
+		C24680D33E964F5998EDC5F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DDD6AE2DB9454FC8A71C6B20 /* ALL_BUILD */;
+			targetProxy = C6F34CF6C7AA406D924B07AB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0566CF2BECDE424B92AFA156 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/Sunny/prv/github/cmake/rbtrees/.,
+					/Users/Sunny/prv/github/cmake/rbtrees/utest/libs/include,
+					/Users/Sunny/prv/github/cmake/rbtrees/..,
+				);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Sunny/prv/github/cmake/rbtrees/Xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		287CBF9512054221882DB064 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/Sunny/prv/github/cmake/rbtrees/.,
+					/Users/Sunny/prv/github/cmake/rbtrees/utest/libs/include,
+					/Users/Sunny/prv/github/cmake/rbtrees/..,
+				);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+					"-Wall",
+					"-O0",
+					"-g",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					/Users/Sunny/prv/github/cmake/rbtrees/utest/libs/macos/libgtest.a,
+					/Users/Sunny/prv/github/cmake/rbtrees/utest/libs/macos/libgtest_main.a,
+					/Users/Sunny/prv/github/cmake/rbtrees/Xcode/MinSizeRel/librbtree.a,
+					"-lpthread",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = rbtree_tests;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Sunny/prv/github/cmake/rbtrees/Xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = MinSizeRel;
+		};
+		2955B08BDF5047E9B7B069A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk;
+				SYMROOT = /Users/Sunny/prv/github/cmake/rbtrees/Xcode/build;
+			};
+			name = Debug;
+		};
+		30F80511BF3C424AB35F0DED /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/Sunny/prv/github/cmake/rbtrees/.,
+					/Users/Sunny/prv/github/cmake/rbtrees/utest/libs/include,
+					/Users/Sunny/prv/github/cmake/rbtrees/..,
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+					"-Wall",
+					"-O0",
+					"-g",
+				);
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = rbtree;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Sunny/prv/github/cmake/rbtrees/Xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		31D70371EA874579A474B017 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/Sunny/prv/github/cmake/rbtrees/.,
+					/Users/Sunny/prv/github/cmake/rbtrees/utest/libs/include,
+					/Users/Sunny/prv/github/cmake/rbtrees/..,
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+					"-Wall",
+					"-O0",
+					"-g",
+				);
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = rbtree;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Sunny/prv/github/cmake/rbtrees/Xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = MinSizeRel;
+		};
+		350EE3E0012D4474931EAA2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/Sunny/prv/github/cmake/rbtrees/.,
+					/Users/Sunny/prv/github/cmake/rbtrees/utest/libs/include,
+					/Users/Sunny/prv/github/cmake/rbtrees/..,
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-Wall",
+					"-O0",
+					"-g",
+				);
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = rbtree;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Sunny/prv/github/cmake/rbtrees/Xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Debug;
+		};
+		36AC38E62D614554B23003B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/Sunny/prv/github/cmake/rbtrees/.,
+					/Users/Sunny/prv/github/cmake/rbtrees/utest/libs/include,
+					/Users/Sunny/prv/github/cmake/rbtrees/..,
+				);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Sunny/prv/github/cmake/rbtrees/Xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Release;
+		};
+		41E296ECE6F84EC2AEC5EE9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/Sunny/prv/github/cmake/rbtrees/.,
+					/Users/Sunny/prv/github/cmake/rbtrees/utest/libs/include,
+					/Users/Sunny/prv/github/cmake/rbtrees/..,
+				);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-Wall",
+					"-O0",
+					"-g",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					/Users/Sunny/prv/github/cmake/rbtrees/Xcode/Debug/librbtree.a,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = rbtree_main;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Sunny/prv/github/cmake/rbtrees/Xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Debug;
+		};
+		46E8F141A6B84DC5AEB16F98 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk;
+				SYMROOT = /Users/Sunny/prv/github/cmake/rbtrees/Xcode/build;
+			};
+			name = MinSizeRel;
+		};
+		494CE78EDFB34A0381A62D5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/Sunny/prv/github/cmake/rbtrees/.,
+					/Users/Sunny/prv/github/cmake/rbtrees/utest/libs/include,
+					/Users/Sunny/prv/github/cmake/rbtrees/..,
+				);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+					"-Wall",
+					"-O0",
+					"-g",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					/Users/Sunny/prv/github/cmake/rbtrees/utest/libs/macos/libgtest.a,
+					/Users/Sunny/prv/github/cmake/rbtrees/utest/libs/macos/libgtest_main.a,
+					/Users/Sunny/prv/github/cmake/rbtrees/Xcode/Release/librbtree.a,
+					"-lpthread",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = rbtree_tests;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Sunny/prv/github/cmake/rbtrees/Xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Release;
+		};
+		5E945F3B12F8410C80C92888 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/Sunny/prv/github/cmake/rbtrees/.,
+					/Users/Sunny/prv/github/cmake/rbtrees/utest/libs/include,
+					/Users/Sunny/prv/github/cmake/rbtrees/..,
+				);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+					"-Wall",
+					"-O0",
+					"-g",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					/Users/Sunny/prv/github/cmake/rbtrees/Xcode/Release/librbtree.a,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = rbtree_main;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Sunny/prv/github/cmake/rbtrees/Xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Release;
+		};
+		63647CEFBB484024934EDB78 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/Sunny/prv/github/cmake/rbtrees/.,
+					/Users/Sunny/prv/github/cmake/rbtrees/utest/libs/include,
+					/Users/Sunny/prv/github/cmake/rbtrees/..,
+				);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+					"-Wall",
+					"-O0",
+					"-g",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					/Users/Sunny/prv/github/cmake/rbtrees/Xcode/RelWithDebInfo/librbtree.a,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = rbtree_main;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Sunny/prv/github/cmake/rbtrees/Xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		677AAEDAAC904F309B002C5B /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk;
+				SYMROOT = /Users/Sunny/prv/github/cmake/rbtrees/Xcode/build;
+			};
+			name = RelWithDebInfo;
+		};
+		692438A1BF0F4CB2B7034E64 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/Sunny/prv/github/cmake/rbtrees/.,
+					/Users/Sunny/prv/github/cmake/rbtrees/utest/libs/include,
+					/Users/Sunny/prv/github/cmake/rbtrees/..,
+				);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Sunny/prv/github/cmake/rbtrees/Xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		6FA80FF6B9D74D7090C34CE3 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/Sunny/prv/github/cmake/rbtrees/.,
+					/Users/Sunny/prv/github/cmake/rbtrees/utest/libs/include,
+					/Users/Sunny/prv/github/cmake/rbtrees/..,
+				);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+					"-Wall",
+					"-O0",
+					"-g",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					/Users/Sunny/prv/github/cmake/rbtrees/Xcode/MinSizeRel/librbtree.a,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = rbtree_main;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Sunny/prv/github/cmake/rbtrees/Xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = MinSizeRel;
+		};
+		78120B42105C46DD80BEA00F /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/Sunny/prv/github/cmake/rbtrees/.,
+					/Users/Sunny/prv/github/cmake/rbtrees/utest/libs/include,
+					/Users/Sunny/prv/github/cmake/rbtrees/..,
+				);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Sunny/prv/github/cmake/rbtrees/Xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = MinSizeRel;
+		};
+		92CE94FCC69245C2919D5DCA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/Sunny/prv/github/cmake/rbtrees/.,
+					/Users/Sunny/prv/github/cmake/rbtrees/utest/libs/include,
+					/Users/Sunny/prv/github/cmake/rbtrees/..,
+				);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Sunny/prv/github/cmake/rbtrees/Xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Debug;
+		};
+		A8DA3EBBBED748D3A96AAFC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/Sunny/prv/github/cmake/rbtrees/.,
+					/Users/Sunny/prv/github/cmake/rbtrees/utest/libs/include,
+					/Users/Sunny/prv/github/cmake/rbtrees/..,
+				);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-Wall",
+					"-O0",
+					"-g",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					/Users/Sunny/prv/github/cmake/rbtrees/utest/libs/macos/libgtest.a,
+					/Users/Sunny/prv/github/cmake/rbtrees/utest/libs/macos/libgtest_main.a,
+					/Users/Sunny/prv/github/cmake/rbtrees/Xcode/Debug/librbtree.a,
+					"-lpthread",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = rbtree_tests;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Sunny/prv/github/cmake/rbtrees/Xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Debug;
+		};
+		AB48BC32F65B432C872011B2 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/Sunny/prv/github/cmake/rbtrees/.,
+					/Users/Sunny/prv/github/cmake/rbtrees/utest/libs/include,
+					/Users/Sunny/prv/github/cmake/rbtrees/..,
+				);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Sunny/prv/github/cmake/rbtrees/Xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = MinSizeRel;
+		};
+		AC2C9D5E4A284822BFCEA614 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/Sunny/prv/github/cmake/rbtrees/.,
+					/Users/Sunny/prv/github/cmake/rbtrees/utest/libs/include,
+					/Users/Sunny/prv/github/cmake/rbtrees/..,
+				);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Sunny/prv/github/cmake/rbtrees/Xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = MinSizeRel;
+		};
+		B71E98518BE74DDFA5506001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk;
+				SYMROOT = /Users/Sunny/prv/github/cmake/rbtrees/Xcode/build;
+			};
+			name = Release;
+		};
+		BFB7ECCB7F3A497FA3C2C3D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/Sunny/prv/github/cmake/rbtrees/.,
+					/Users/Sunny/prv/github/cmake/rbtrees/utest/libs/include,
+					/Users/Sunny/prv/github/cmake/rbtrees/..,
+				);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Sunny/prv/github/cmake/rbtrees/Xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Release;
+		};
+		C77F7C3723CA4F0DABF61E21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/Sunny/prv/github/cmake/rbtrees/.,
+					/Users/Sunny/prv/github/cmake/rbtrees/utest/libs/include,
+					/Users/Sunny/prv/github/cmake/rbtrees/..,
+				);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Sunny/prv/github/cmake/rbtrees/Xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Debug;
+		};
+		D043F86C9B16488B8B10A35D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/Sunny/prv/github/cmake/rbtrees/.,
+					/Users/Sunny/prv/github/cmake/rbtrees/utest/libs/include,
+					/Users/Sunny/prv/github/cmake/rbtrees/..,
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+					"-Wall",
+					"-O0",
+					"-g",
+				);
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = rbtree;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Sunny/prv/github/cmake/rbtrees/Xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Release;
+		};
+		D04CFDE4858442858C27B883 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/Sunny/prv/github/cmake/rbtrees/.,
+					/Users/Sunny/prv/github/cmake/rbtrees/utest/libs/include,
+					/Users/Sunny/prv/github/cmake/rbtrees/..,
+				);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Sunny/prv/github/cmake/rbtrees/Xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Debug;
+		};
+		D26985BBFBF248AAB600AE44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/Sunny/prv/github/cmake/rbtrees/.,
+					/Users/Sunny/prv/github/cmake/rbtrees/utest/libs/include,
+					/Users/Sunny/prv/github/cmake/rbtrees/..,
+				);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Sunny/prv/github/cmake/rbtrees/Xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Release;
+		};
+		D40D1AF7204B4581A6E540A8 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/Sunny/prv/github/cmake/rbtrees/.,
+					/Users/Sunny/prv/github/cmake/rbtrees/utest/libs/include,
+					/Users/Sunny/prv/github/cmake/rbtrees/..,
+				);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Sunny/prv/github/cmake/rbtrees/Xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		E76EEEE9B402448693F8E135 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/Sunny/prv/github/cmake/rbtrees/.,
+					/Users/Sunny/prv/github/cmake/rbtrees/utest/libs/include,
+					/Users/Sunny/prv/github/cmake/rbtrees/..,
+				);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+					"-Wall",
+					"-O0",
+					"-g",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					/Users/Sunny/prv/github/cmake/rbtrees/utest/libs/macos/libgtest.a,
+					/Users/Sunny/prv/github/cmake/rbtrees/utest/libs/macos/libgtest_main.a,
+					/Users/Sunny/prv/github/cmake/rbtrees/Xcode/RelWithDebInfo/librbtree.a,
+					"-lpthread",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = rbtree_tests;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Sunny/prv/github/cmake/rbtrees/Xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1C645DC254E04CCDB97F47E3 /* Build configuration list for PBXAggregateTarget "install" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92CE94FCC69245C2919D5DCA /* Debug */,
+				BFB7ECCB7F3A497FA3C2C3D0 /* Release */,
+				AC2C9D5E4A284822BFCEA614 /* MinSizeRel */,
+				692438A1BF0F4CB2B7034E64 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		2212804796DA4C7DAF79F22A /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C77F7C3723CA4F0DABF61E21 /* Debug */,
+				D26985BBFBF248AAB600AE44 /* Release */,
+				AB48BC32F65B432C872011B2 /* MinSizeRel */,
+				0566CF2BECDE424B92AFA156 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		45433716DBB14135823E9B90 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D04CFDE4858442858C27B883 /* Debug */,
+				36AC38E62D614554B23003B8 /* Release */,
+				78120B42105C46DD80BEA00F /* MinSizeRel */,
+				D40D1AF7204B4581A6E540A8 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5EA2C789600B4136A0CE7C2A /* Build configuration list for PBXNativeTarget "rbtree" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				350EE3E0012D4474931EAA2E /* Debug */,
+				D043F86C9B16488B8B10A35D /* Release */,
+				31D70371EA874579A474B017 /* MinSizeRel */,
+				30F80511BF3C424AB35F0DED /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		6AC7D2A362C34A65BA9D6A60 /* Build configuration list for PBXNativeTarget "rbtree_tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A8DA3EBBBED748D3A96AAFC4 /* Debug */,
+				494CE78EDFB34A0381A62D5D /* Release */,
+				287CBF9512054221882DB064 /* MinSizeRel */,
+				E76EEEE9B402448693F8E135 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		95A57484146E430CBCF08647 /* Build configuration list for PBXNativeTarget "rbtree_main" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41E296ECE6F84EC2AEC5EE9A /* Debug */,
+				5E945F3B12F8410C80C92888 /* Release */,
+				6FA80FF6B9D74D7090C34CE3 /* MinSizeRel */,
+				63647CEFBB484024934EDB78 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D4F93D17C70D4DEB9C7D0E43 /* Build configuration list for PBXProject "rbtree_main" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2955B08BDF5047E9B7B069A7 /* Debug */,
+				B71E98518BE74DDFA5506001 /* Release */,
+				46E8F141A6B84DC5AEB16F98 /* MinSizeRel */,
+				677AAEDAAC904F309B002C5B /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D14F33A85E294C6F8FADF5CB /* Project object */;
+}
