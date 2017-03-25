@@ -1,8 +1,14 @@
 # Author: Sunil
 cmake_minimum_required(VERSION 2.8)
 
-# activae c++11 features
-SET(CMAKE_CXX_FLAGS "-std=c++11")
+# mac os needs c++11 and linux needs gnu++11
+if (APPLE OR WIN32)
+  # activae c++11 features
+  SET(CMAKE_CXX_FLAGS "-std=c++11")
+elseif (UNIX)
+  SET(CMAKE_CXX_FLAGS "-std=gnu++11")
+endif()
+
 SET(CMAKE_EXE_LINKER_FLAGS)
 
 SET(TARGET rbtree_main)
@@ -23,13 +29,13 @@ target_link_libraries(${TARGET} ${RBTREE_LIB})
 
 include_directories(utest/libs/include/)
 
-if(APPLE)
+if (APPLE)
   SET(OS_TYPE macos)
-elseif(UNIX) 
+elseif (UNIX) 
   SET(OS_TYPE linux)
-else()
+else ()
   SET(OS_TYPE win)
-endif()
+endif ()
 
 message(STATUS "using lib path:" ${CMAKE_CURRENT_SOURCE_DIR}/utest/libs/${OS_TYPE}/)
 
