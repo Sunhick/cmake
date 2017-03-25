@@ -129,7 +129,7 @@ TEST_F(rbtree_tests, test_rbtree_insert) {
     };
     
     for (int i = 0; i < expected.size(); i++) {
-        auto n = i+2;
+        auto n = i+1;
         rbt->insert(i);
         
         stringstream buffer; {
@@ -141,7 +141,7 @@ TEST_F(rbtree_tests, test_rbtree_insert) {
         EXPECT_TRUE(expected[i] == got) << "insert of " << i << " is incorrect!";
         
         // max heigth of rb tree <= 2 * log(n+1)
-        EXPECT_TRUE(rbt->depth() < 2 * ceil(log2(n))) << "depth of rb tree is incorrect!";
+        EXPECT_TRUE(rbt->depth() < 2 * ceil(log2(n+1))) << "depth of rb tree is incorrect!";
         
     }
 }
