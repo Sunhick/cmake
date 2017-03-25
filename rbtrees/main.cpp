@@ -57,11 +57,11 @@ int main(int argc, const char * argv[]) {
     cout << std::boolalpha << rbt.is_valid_rbtree() << endl;
     cout << std::boolalpha << rbt2.is_valid_rbtree() << endl;
     
-//    cout << "=== DFS ===" << endl;
-//    rbt2.dfs();
-//    
-//    cout << "=== BFS ===" << endl;
-//    rbt2.bfs();
+    cout << "=== DFS ===" << endl;
+    rbt2.dfs();
+    
+    cout << "=== BFS ===" << endl;
+    rbt2.bfs();
     
     rbtree rb;
     
@@ -79,6 +79,14 @@ int main(int argc, const char * argv[]) {
     cout << "=== INORDER ===" << endl;
     rb.inorder();
     cout << std::boolalpha << rb.is_valid_rbtree() << endl;
+    
+    rbtree rb2;
+    for (int i = 0; i < 10; i++) {
+        rb2.insert(i);
+        cout << "=== INORDER ===" << endl;
+        rb2.inorder();
+        cout << std::boolalpha << rb2.is_valid_rbtree() << endl;
+    }
 
     return 0;
 }

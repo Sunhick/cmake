@@ -361,14 +361,17 @@ void rbtree::balance(rbnode* x) {
          */
         auto p = x->parent;
 
-        // if node's parent is black. then we're done.
-        if (p->is_black_node()) {
+        // if node's parent is black or null node(black). then we're done.
+        if (!p || p->is_black_node()) {
             break;
         }
         
         auto g = p->parent;
         auto is_p_left_of_g = (g->left == p);
         auto u = is_p_left_of_g ? g->right : g->left;
+        
+        // treat null node as a black node.
+        auto u_is_black = u ? u->is_black_node() : true;
         
         /* case 1: uncle is red.
             fix: recolor parent, grand-parent and uncle.
@@ -381,7 +384,7 @@ void rbtree::balance(rbnode* x) {
                  / \   / \                                  / \   / \
                 X                                          X
          */
-        if (u && u->is_red_node()) {
+        if (!u_is_black) {
             g->color = rbcolor::red;
             p->color = rbcolor::black;
             
@@ -416,7 +419,7 @@ void rbtree::balance(rbnode* x) {
         auto is_x_right_of_p = (p->right == x);
         auto is_internal = (is_p_left_of_g && is_x_right_of_p) || (!is_p_left_of_g && !is_x_right_of_p);
         
-        if (u->is_black_node() && is_internal) {
+        if (u_is_black && is_internal) {
             
             if (is_p_left_of_g && is_x_right_of_p)
                 left_rotate(p);
@@ -454,7 +457,7 @@ void rbtree::balance(rbnode* x) {
         auto is_x_left_of_p = (p->left == x);
         auto is_external = true;
         
-        if (u->is_black_node() && is_external) {
+        if (u_is_black && is_external) {
             if (is_p_left_of_g && is_x_left_of_p)
                 right_rotate(g);
             else
