@@ -4,6 +4,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <vector>
+#include <cmath>
 #include <algorithm>
 
 #include "gtest/gtest.h"
@@ -53,12 +54,12 @@ public:
 };
 
 TEST_F(rbtree_tests, test_empty) {
-    EXPECT_TRUE(rbt->root == nullptr) << "root should be null";
+    EXPECT_TRUE(rbt->root == nullptr) << "root should be null!";
 }
 
 TEST_F(rbtree_tests, test_rbtree_invalid_1) {
     rbt->root = new rbnode(56, rbcolor::red);
-    EXPECT_FALSE(rbt->is_valid_rbtree()) << "tree with red root is invalid";
+    EXPECT_FALSE(rbt->is_valid_rbtree()) << "tree with red root should be invalid!";
 }
 
 TEST_F(rbtree_tests, test_rbtree_invalid_2) {
@@ -113,7 +114,36 @@ TEST_F(rbtree_tests, test_rbtree_valid_2) {
 }
 
 TEST_F(rbtree_tests, test_rbtree_insert) {
+    // generated using visualization tool: https://www.cs.usfca.edu/~galles/visualization/RedBlack.html
+    vector<string> expected = {
+        "0(black)\n",
+        "0(black)\n1(red)\n",
+        "0(red)\n1(black)\n2(red)\n",
+        "0(black)\n1(black)\n2(black)\n3(red)\n",
+        "0(black)\n1(black)\n2(red)\n3(black)\n4(red)\n",
+        "0(black)\n1(black)\n2(black)\n3(red)\n4(black)\n5(red)\n",
+        "0(black)\n1(black)\n2(black)\n3(red)\n4(red)\n5(black)\n6(red)\n",
+        "0(black)\n1(red)\n2(black)\n3(black)\n4(black)\n5(red)\n6(black)\n7(red)\n",
+        "0(black)\n1(red)\n2(black)\n3(black)\n4(black)\n5(red)\n6(red)\n7(black)\n8(red)\n",
+        "0(black)\n1(black)\n2(black)\n3(black)\n4(black)\n5(black)\n6(black)\n7(red)\n8(black)\n9(red)\n"
+    };
     
+    for (int i = 0; i < expected.size(); i++) {
+        auto n = i+2;
+        rbt->insert(i);
+        
+        stringstream buffer; {
+            cout_redirect activate(buffer.rdbuf());
+            rbt->inorder();
+        }
+        string got = buffer.str();
+        
+        EXPECT_TRUE(expected[i] == got) << "insert of " << i << " is incorrect!";
+        
+        // max heigth of rb tree <= 2 * log(n+1)
+        EXPECT_TRUE(rbt->depth() < 2 * ceil(log2(n))) << "depth of rb tree is incorrect!";
+        
+    }
 }
 
 TEST_F(rbtree_tests, test_rbtree_remove) {
@@ -121,7 +151,9 @@ TEST_F(rbtree_tests, test_rbtree_remove) {
 }
 
 TEST_F(rbtree_tests, test_rbtree_remove_all) {
-    
+    rbt->remove_all(rbt->root);
+    EXPECT_TRUE(rbt->root == nullptr);
+    EXPECT_TRUE(rbt->depth() == 0) << "depth of empty rb tree should be zero!";
 }
 
 TEST_F(rbtree_tests, test_left_rotate) {
@@ -152,11 +184,11 @@ TEST_F(rbtree_tests, test_left_rotate) {
         rbt->inorder();
     }
     
-    string expected = "25\n50\n55\n60\n70\n";
+    string expected = "25(black)\n50(black)\n55(black)\n60(red)\n70(black)\n";
     string got = buffer.str();
     
-    EXPECT_TRUE(expected == got) << "left rotation is incorrect.";
-    EXPECT_TRUE(rbt->depth() == 3) << "left rotation is of incorrect depth";
+    EXPECT_TRUE(expected == got) << "left rotation is incorrect!";
+    EXPECT_TRUE(rbt->depth() == 3) << "left rotation is of incorrect depth!";
 }
 
 TEST_F(rbtree_tests, test_right_rotate) {
@@ -188,7 +220,7 @@ TEST_F(rbtree_tests, test_right_rotate) {
         rbt->inorder();
     }
     
-    string expected = "10\n25\n30\n50\n60\n";
+    string expected = "10(black)\n25(red)\n30(black)\n50(black)\n60(black)\n";
     string got = buffer.str();
     
     EXPECT_TRUE(expected == got) << "right rotation is incorrect.";

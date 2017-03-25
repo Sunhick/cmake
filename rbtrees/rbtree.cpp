@@ -425,9 +425,9 @@ void rbtree::balance(rbnode* x) {
                    X                                                   P
          */
         auto is_x_right_of_p = (p->right == x);
-        auto is_internal = (is_p_left_of_g && is_x_right_of_p) || (!is_p_left_of_g && !is_x_right_of_p);
+        auto is_x_internal = (is_p_left_of_g && is_x_right_of_p) || (!is_p_left_of_g && !is_x_right_of_p);
         
-        if (u_is_black && is_internal) {
+        if (u_is_black && is_x_internal) {
             
             if (is_p_left_of_g && is_x_right_of_p)
                 left_rotate(p);
@@ -463,9 +463,9 @@ void rbtree::balance(rbnode* x) {
         // I'm hard coding to true, because if none of the above cases fails. It
         // has to be a case-3 and has to be external node.
         auto is_x_left_of_p = (p->left == x);
-        auto is_external = true;
+        auto is_x_external = true;
         
-        if (u_is_black && is_external) {
+        if (u_is_black && is_x_external) {
             if (is_p_left_of_g && is_x_left_of_p)
                 right_rotate(g);
             else
