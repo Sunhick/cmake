@@ -433,9 +433,9 @@ void rbtree::balance(rbnode* x) {
                    X                                                   P
          */
         auto is_x_right_of_p = (p->right == x);
-        auto is_x_internal = (is_p_left_of_g && is_x_right_of_p) || (!is_p_left_of_g && !is_x_right_of_p);
+        auto x_is_internal = (is_p_left_of_g && is_x_right_of_p) || (!is_p_left_of_g && !is_x_right_of_p);
         
-        if (u_is_black && is_x_internal) {
+        if (u_is_black && x_is_internal) {
             
             if (is_p_left_of_g && is_x_right_of_p)
                 left_rotate(p);
@@ -468,12 +468,12 @@ void rbtree::balance(rbnode* x) {
                   a   X                                    u   a
                                                           / \
          */
-        // I'm hard coding to true, because if none of the above cases fails. It
+        // I'm hard coding to true, because if none of the above cases are satisfied, It
         // has to be a case-3 and has to be external node.
         auto is_x_left_of_p = (p->left == x);
-        auto is_x_external = true;
+        auto x_is_external = true;
         
-        if (u_is_black && is_x_external) {
+        if (u_is_black && x_is_external) {
             if (is_p_left_of_g && is_x_left_of_p)
                 right_rotate(g);
             else
@@ -637,5 +637,143 @@ int rbtree::depth() {
 
 void rbtree::remove(int key) {
     // TODO: after removing the node, rebalance the tree.
-    throw new runtime_error("not implemented");
+    // ref: http://www.stolerman.net/studies/cs521/red_black_trees.pdf
+    
+    auto node = search(key);
+    
+    if (!node) {
+        // node with key not found.
+        return;
+    }
+    
+    /*
+     notation: a is the node to be deleted.
+     case 1: no children.
+     
+     */
+    if (!node->left && !node->right) {
+        auto parent = node->parent;
+        if (parent->left == node)
+            parent->left = nullptr;
+        else
+            parent->right = nullptr;
+        
+        if (node->color == rbcolor::black)
+            color_correction(parent);
+        delete node;
+        return;
+    }
+    
+    /*
+     case 2: (only one child) no left child
+     
+                 /                           /
+                a       ---------->         b
+                 \                         / \
+                  b
+                 / \
+     */
+    if (!node->left) {
+        // disregard the color, let's delete the node and fix color later.
+        auto parent = node->parent;
+        auto right = node->right;
+        
+        parent->right = right;
+        
+        if (right) {
+            right->parent = parent;
+            right->color = rbcolor::black;
+        }
+        
+        if (node->color == rbcolor::black)
+            color_correction(parent);
+        
+        delete node;
+        return;
+    }
+    
+    /*
+     case 2: (only one child) no right child
+            
+                \                              \
+                 a          -------->           b
+                /                              / \
+               b
+              / \
+     */
+    
+    if (!node->right) {
+        auto parent = node->parent;
+        auto left = node->left;
+        parent->left = left;
+        
+        if (left) {
+            left->parent = parent;
+            left->color = rbcolor::black;
+        }
+        
+        if (node->color == rbcolor::black)
+            color_correction(parent);
+        
+        delete node;
+        return;
+    }
+    
+    /*
+     case 4: node has two children
+     
+                 /                                     /
+                a                                     e
+              /   \                                 /   \
+             b     c      ------------>            b     c
+            / \   / \                             / \   / \
+                 e   d                                 e
+                  \ / \                                 \
+     */
+    if (node->left && node->right) {
+        auto replace = tree_minimum(node);
+        
+        // it would be easier to copy the value from replace
+        // and delete it instead. I'm too lazy to swap the nodes.
+        node->key = replace->key;
+        
+        // I dont have to change the color.
+        
+        if (replace->right)
+            replace->parent->left = replace->parent;
+        
+        // Is the replace directly attached to right side of the node.
+        if (node->right == replace) {
+            node->right = replace->right;
+        } else {
+            // If not present directly on the right.
+            replace->parent->left = replace->right;
+        }
+        
+        color_correction(replace->parent);
+        delete replace;
+        
+        if (replace->color == rbcolor::black)
+            color_correction(replace->parent);
+    }
+}
+
+void rbtree::color_correction(rbnode* node) {
+    /*
+     case 1: a's sibling (c) is red.
+     
+     */
+    cout << "color fix for : " << node->key << endl;
+}
+
+rbnode* rbtree::tree_minimum(rbnode* node) {
+    if (!node) {
+        return nullptr;
+    }
+    
+    while (node->left) {
+        node = node->left;
+    }
+    
+    return node;
 }

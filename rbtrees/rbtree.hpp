@@ -24,6 +24,8 @@ private:
     bool has_equal_black_nodes_all_path(rbnode* parent);
     bool violates(bool);
     int depth(rbnode* node);
+    rbnode* tree_minimum(rbnode* node);
+    void color_correction(rbnode* node);
     
     void inorder_traversal(rbnode* node);
     void preorder_traversal(rbnode* node);
