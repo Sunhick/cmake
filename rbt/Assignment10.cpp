@@ -90,7 +90,7 @@ int main(int argc, const char * argv[]) {
                 string title;
                 cout << "Enter title:" << endl;
                 std::getline(cin, title);
-                catalog.findMovie(title);
+                catalog.rentMovie(title);
                 break;
             }
                 
