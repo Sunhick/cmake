@@ -14,7 +14,7 @@ add_definitions("-Wall" "-O0 -g")
 project(${TARGET})
 
 # add_executable(${TARGET} ${TARGET_SRC})
-add_executable(${TARGET} MovieTree.cpp MovieTree.h Assignment8.cpp)
+add_executable(${TARGET} MovieTree.cpp MovieTree.hpp main.cpp)
 # target_link_libraries(${TARGET} gcov)
 
 include_directories(lib/include/)

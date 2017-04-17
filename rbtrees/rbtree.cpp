@@ -658,8 +658,14 @@ void rbtree::remove(int key) {
         else
             parent->right = nullptr;
         
-        if (node->color == rbcolor::black)
-            color_correction(parent);
+        if (node->color == rbcolor::black) {
+            rb_color_fix fix = {
+                .parent = parent,
+                .double_edge = nullptr,
+                .is_double_edge_left = parent->left == node
+            };
+            color_correction(fix);
+        }
         delete node;
         return;
     }
@@ -685,8 +691,14 @@ void rbtree::remove(int key) {
             right->color = rbcolor::black;
         }
         
-        if (node->color == rbcolor::black)
-            color_correction(parent);
+        if (node->color == rbcolor::black) {
+            rb_color_fix fix = {
+                .parent = parent,
+                .double_edge = nullptr,
+                .is_double_edge_left = parent->left == node
+            };
+            color_correction(fix);
+        }
         
         delete node;
         return;
@@ -712,8 +724,14 @@ void rbtree::remove(int key) {
             left->color = rbcolor::black;
         }
         
-        if (node->color == rbcolor::black)
-            color_correction(parent);
+        if (node->color == rbcolor::black) {
+            rb_color_fix fix = {
+                .parent = parent,
+                .double_edge = nullptr,
+                .is_double_edge_left = parent->left == node
+            };
+            color_correction(fix);
+        }
         
         delete node;
         return;
@@ -731,7 +749,8 @@ void rbtree::remove(int key) {
                   \ / \                                 \
      */
     if (node->left && node->right) {
-        auto replace = tree_minimum(node);
+        // auto replace = tree_minimum(node->right);
+        auto replace = tree_maximum(node->left);
         
         // it would be easier to copy the value from replace
         // and delete it instead. I'm too lazy to swap the nodes.
@@ -739,31 +758,143 @@ void rbtree::remove(int key) {
         
         // I dont have to change the color.
         
-        if (replace->right)
-            replace->parent->left = replace->parent;
+//        if (replace->right)
+//            replace->parent->left = replace->parent;
+        if (replace->left)
+            replace->parent->right = replace->parent;
         
         // Is the replace directly attached to right side of the node.
-        if (node->right == replace) {
-            node->right = replace->right;
+//        if (node->right == replace) {
+//            node->right = replace->right;
+//        } else {
+//            // If not present directly on the right.
+//            replace->parent->left = replace->right;
+//        }
+        if (node->left == replace) {
+            node->left = replace->left;
         } else {
             // If not present directly on the right.
-            replace->parent->left = replace->right;
+            replace->parent->right = replace->left;
         }
         
-        color_correction(replace->parent);
-        delete replace;
+        if (replace->color == rbcolor::black) {
+            rb_color_fix fix = {
+                .parent = replace->parent,
+                .double_edge = replace->left,
+                .is_double_edge_left = replace->parent->left == replace
+            };
+            color_correction(fix);
+        }
         
-        if (replace->color == rbcolor::black)
-            color_correction(replace->parent);
+        
+        delete replace;
     }
 }
 
-void rbtree::color_correction(rbnode* node) {
-    /*
-     case 1: a's sibling (c) is red.
-     
-     */
-    cout << "color fix for : " << node->key << endl;
+void rbtree::color_correction(rb_color_fix fix) {
+    while (1) {
+        // passed node is the reference to double black if non null.
+        // otherwise reference to parent is passed.
+        
+        /*
+         notation used for tree representation in comments:
+         
+            ((b))  =  double black node
+                b  =  black node
+                r  =  red node
+             null  =  null node
+
+         */
+        auto dblack = fix.double_edge;
+        /*
+         case 1: if double black node becomes the root. 
+         Fix: Turn it into single black node.
+         
+                ((b))                       b
+                /   \       ------>        / \
+               null  null               null  null
+         */
+        if (dblack == root) {
+            root->color = rbcolor::black;
+            return;
+        }
+        
+        /*
+         case 2:
+         */
+        
+        /*
+         case 3: if parent, node(double edge) and it's sibling are all black.
+         
+                  b                             ((b))
+                /   \                           /   \
+            ((b))    b      ------->           b     r
+                    / \                             / \
+                   b   b                           b   b
+         */
+        auto parent = fix.parent;
+        auto right = parent->right;
+        auto left = parent->left;
+        auto is_left_double_edge = fix.is_double_edge_left;
+        auto isblack = [](rbnode* x) {
+            return x ? x->is_black_node() : true;
+        };
+        
+        auto sibling_children_are_black = false;
+        if (is_left_double_edge) {
+            
+        }
+        auto sibling_are_black = isblack(left) && isblack(right);
+        
+        if (parent->is_black_node() && sibling_are_black) {
+            if (is_left_double_edge) {
+                if (right)
+                    right->color = rbcolor::red;
+            } else {
+                if (left)
+                    left->color = rbcolor::red;
+            }
+            
+            // now parent itself becomes the double black edge.
+            fix.parent = parent->parent;
+            fix.double_edge = parent;
+            continue;
+        }
+        
+        /*
+         case 4: if parent is red, sibling is black and it's children are also black.
+         Fix: swap color between parent and sibling
+                    
+                        r                            b
+                      /   \                        /   \
+                    ((b))  b     -------->        b     r
+                          / \                          / \
+                         b   b                        b   b
+         */
+        if (parent->is_red_node() && sibling_are_black) {
+            parent->color = rbcolor::black;
+            
+            if (is_left_double_edge) {
+                if (right) right->color = rbcolor::red;
+            } else {
+                if (left) left->color = rbcolor::red;
+            }
+            
+            return;
+        }
+    }
+}
+
+rbnode* rbtree::tree_maximum(rbnode* node) {
+    if (!node) {
+        return nullptr;
+    }
+    
+    while (node->right) {
+        node = node->right;
+    }
+    
+    return node;
 }
 
 rbnode* rbtree::tree_minimum(rbnode* node) {

@@ -32,4 +32,10 @@ public:
     bool is_black_node();
 };
 
+struct rb_color_fix {
+    rbnode* parent;
+    rbnode* double_edge;
+    bool is_double_edge_left;
+};
+
 #endif /* rbnode_hpp */
