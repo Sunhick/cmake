@@ -1,5 +1,5 @@
 # Author: Sunil
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.1.0 FATAL_ERROR)
 
 # activae c++11 features
 SET(CMAKE_CXX_FLAGS "-std=c++11")
