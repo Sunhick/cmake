@@ -14,19 +14,19 @@ PlayerInfo Utilities::ConstructFrom(string line) {
     stringstream lineStream(line);
     
     // Format of the line:
-    // yearID : int
-    // teamID : string
-    // leagueID : string
-    // playerID : string
-    // salary : long
-    // firstName : string
-    // lastName : string
-    // birthYear : string
+    // yearID       : int
+    // teamID       : string
+    // leagueID     : string
+    // playerID     : string
+    // salary       : long
+    // firstName    : string
+    // lastName     : string
+    // birthYear    : string
     // birthCountry : string
-    // weight : float
-    // height : float
-    // bats : int
-    // throws : int
+    // weight       : float
+    // height       : float
+    // bats         : int
+    // throws       : int
     
     int yearId;
     char bats, throws;
