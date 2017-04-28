@@ -72,3 +72,13 @@ PlayerInfo Utilities::ConstructFrom(string line) {
         .throws = throws
     };
 }
+
+string Utilities::MakeKey(string firstName, string lastName) {
+//    if (firstName == "" && lastName == "")
+//        throw runtime_error("Cannot have a key with first and last name as empty!");
+    return firstName + lastName;
+}
+
+string Utilities::MakeKey(PlayerInfo& player) {
+    return MakeKey(player.firstName, player.lastName);
+}

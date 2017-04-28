@@ -14,6 +14,8 @@
 class Utilities {
 public:
     static PlayerInfo ConstructFrom(string line);
+    static string MakeKey(string firstName, string lastName);
+    static string MakeKey(PlayerInfo& player);
 };
 
 #endif /* Utilities_hpp */
