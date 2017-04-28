@@ -15,10 +15,10 @@ PlayerInfo Utilities::ConstructFrom(string line) {
     
     // Format of the line:
     // yearID : int
-    // teamID : int
-    // leagueID : int
-    // playerID : int
-    // salary : float
+    // teamID : string
+    // leagueID : string
+    // playerID : string
+    // salary : long
     // firstName : string
     // lastName : string
     // birthYear : string
@@ -30,7 +30,8 @@ PlayerInfo Utilities::ConstructFrom(string line) {
     
     int yearId;
     char bats, throws;
-    float salary, weight, height;
+    long salary;
+    float weight, height;
     string teamId, playerId, leagueId, firstName, lastName, birthYear, birthCountry;
     char ignoreComma;
     
