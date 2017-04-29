@@ -8,7 +8,7 @@
 
 #include <iostream>
 
-#include "Resolver.hpp"
+#include "Resolvers.hpp"
 #include "Utilities.hpp"
 
 using namespace std;
