@@ -1,16 +1,16 @@
 //
-//  Utilities.cpp
+//  PlayerInfo.cpp
 //  HashTables
 //
-//  Created by Sunil on 4/28/17.
+//  Created by Sunil on 4/29/17.
 //  Copyright © 2017 Sunil. All rights reserved.
 //
 
-#include "Utilities.hpp"
+#include "PlayerInfo.hpp"
 
 #include <sstream>
 
-PlayerInfo Utilities::ConstructFrom(string line) {
+PlayerInfo PlayerInfo::ConstructFrom(string line) {
     stringstream lineStream(line);
     
     // Format of the line:
@@ -73,12 +73,16 @@ PlayerInfo Utilities::ConstructFrom(string line) {
     };
 }
 
-string Utilities::MakeKey(string firstName, string lastName) {
-//    if (firstName == "" && lastName == "")
-//        throw runtime_error("Cannot have a key with first and last name as empty!");
+string PlayerInfo::MakeKey(string firstName, string lastName) {
+    //    if (firstName == "" && lastName == "")
+    //        throw runtime_error("Cannot have a key with first and last name as empty!");
     return firstName + lastName;
 }
 
-string Utilities::MakeKey(PlayerInfo& player) {
+string PlayerInfo::MakeKey(PlayerInfo& player) {
     return MakeKey(player.firstName, player.lastName);
+}
+
+string PlayerInfo::key() const {
+    return MakeKey(firstName, lastName);
 }

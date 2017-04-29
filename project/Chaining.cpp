@@ -9,32 +9,12 @@
 #include <iostream>
 
 #include "Resolvers.hpp"
-#include "Utilities.hpp"
-
-using namespace std;
-
-void LinearProbingResolver::add(HashEntry**& table, HashEntry* entry, int index) {
-    
-}
-
-PlayerInfo* LinearProbingResolver::get(HashEntry**& table, string key, int index){
-    return nullptr;
-}
-
-void LinearProbingResolver::Delete(HashEntry* entry) {
-    
-}
-
-LinearProbingResolver::~LinearProbingResolver() {
-    
-}
 
 PlayerInfo* ChainingResolver::get(HashEntry**& table, string key, int index) {
     cout << "chaining get for: " << key << endl;
     auto entry = table[index];
     while (entry) {
-        auto keyEntry = Utilities::MakeKey(entry->player);
-        if (keyEntry == key) return &entry->player;
+        if (entry->player.key() == key) return &entry->player;
         entry = entry->next;
     }
     
